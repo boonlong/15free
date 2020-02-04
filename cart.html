@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <title>15 years free book</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="site-header">
+            <div class="row align-items-center">
+                <div class="col-4 col-sm-4 col-lg-2 order-lg-1">
+                    <div class="site-branding">
+                        <h1 class="site-title">
+                            <a href="index.html" rel="home"><img src="images/logo.png" alt="Logo"></a>
+                        </h1>
+                    </div>
+                    <!-- .site-branding -->
+                </div>
+                <!-- .col-8 -->
+
+                <div class="col-8 col-sm-8 col-lg-10 order-3 order-md-3 order-lg-2" id="divmenu">
+                    
+                    <!-- .site-navigation -->
+                </div>
+                <!-- .col-2 -->
+            </div>
+            <!-- .row -->
+        </header>
+        <!-- .site-header -->
+
+        <div id="hero-sel">
+            <div class="hero-section">
+
+
+<div class="row">
+    <div class="col-12">
+        <div id="listdata"></div>
+        <button class="btn btn btn-secondary" onClick="resetdb();">clear</button>
+
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>year</th>
+                    <th>subj_id</th>
+                    <th>subj_name</th>
+                    <th>author</th>
+                    <th>price</th>
+                    <th>publisher</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>year</th>
+                    <th>subj_id</th>
+                    <th>subj_name</th>
+                    <th>author</th>
+                    <th>price</th>
+                    <th>publisher</th>
+                </tr>
+            </tfoot>
+        </table>
+        <!-- .single-post -->
+    </div>
+    <!-- .content-area -->
+</div>
+<!-- .row -->
+<script>
+    setTimeout(function() {
+        $('#example').DataTable({
+            data: getdb(),
+            
+        });
+    },2000);
+</script>
+</div>
+<!-- .row -->
+</div>
+</div>
+<!-- .hero-section -->
+
+<footer class="site-footer" id="divfoot">
+
+<!-- .row -->
+</footer>
+<!-- .site-footer -->
+</div>
+<!-- .container-fluid -->
+
+<script type='text/javascript' src='js/jquery-3.3.1.js'></script>
+<script type='text/javascript' src='js/swiper.min.js'></script>
+<script type='text/javascript' src='js/jquery.magnific-popup.min.js'></script>
+<script type='text/javascript' src='js/masonry.pkgd.min.js'></script>
+<script type='text/javascript' src='js/custom.js'></script>
+
+<script type='text/javascript' src='js/jquery.dataTables.min.js'></script>
+<script type='text/javascript' src='js/dataTables.bootstrap4.min.js'></script>
+<script type='text/javascript' src='main.js'></script>
+<script>
+    
+</script>
+</body>
+
+</html>
