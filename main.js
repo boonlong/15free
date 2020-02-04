@@ -1,5 +1,4 @@
-
-function domenu(obj, div ){
+function domenu(obj, div) {
     $('li.current-menu-item').removeClass('current-menu-item');
     $(obj).addClass('current-menu-item');
     //console.log($(obj).children('a').attr('data-url'));
@@ -26,22 +25,25 @@ if (typeof(Storage) !== "undefined") {
 }
 
 function resetdb() {
-	localStorage.clear()
+    localStorage.clear()
     localStorage.setItem("List", "");
-	showbadge();
+
 }
-function setSelBook(selbooklist){
-    localStorage.setItem("List", selbooklist);
-	
+
+function setSelBook(selbooklist) {
+    //localStorage.setItem("List", selbooklist);
+    localStorage.setItem("List", JSON.stringify(selbooklist));
+    showbadge();
 }
+
 function adddb(itemNo) {
-	if(localStorage.getItem("List")=="") {
-		localStorage.List = itemNo;
-	} else {
-		removedb(itemNo);
-		localStorage.List = localStorage.List + ",," + itemNo;
-	}
-	showbadge();
+    if (localStorage.getItem("List") == "") {
+        localStorage.List = itemNo;
+    } else {
+        removedb(itemNo);
+        localStorage.List = localStorage.List + ",," + itemNo;
+    }
+
 }
 
 function removedb(itemNo) {
@@ -52,26 +54,40 @@ function removedb(itemNo) {
         }
     }
     localStorage.List = arr.join();
-	showbadge();
+
 }
-function listdb(){
-	var txt="";
-	var arr = localStorage.List.split(",,");
-	for (var i = 0; i < arr.length; i++) {
+
+function listdb() {
+    var txt = "";
+    var arr = localStorage.List.split(",,");
+    for (var i = 0; i < arr.length; i++) {
         txt += arr[i] + "<br />";
-     }
-	 return txt;
+    }
+    return txt;
 }
-function getdb(){
-    
-    const data=[localStorage.getItem('List')];
-    return data;
+
+function getdb() {
+    let book = [];
+    if (localStorage.getItem('List')) {
+        /*const data = [localStorage.getItem('List')];
+        return data;*/
+        book = JSON.parse(localStorage.getItem('List'));
+        //console.log(book);
+    }
+    showbadge();
+    return book;
 }
-function showbadge(){
-	var arr = localStorage.List.split(",,");
-	var num=0;
-    $('#badge1').html(arr.length); 
+
+function showbadge() {
+    let book = [];
+    if (localStorage.getItem('List')) {
+        book = JSON.parse(localStorage.getItem('List'));
+        $('#badge1').html(book.length);
+    } else {
+        $('#badge1').html('0');
+    }
 }
 
 $('#divmenu').load('menu.html');
 $('#divfoot').load('foot.html');
+showbadge();
